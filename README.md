@@ -5,9 +5,9 @@
 
 ## Built with
 
-- *Ruby* Popular programming language that’s used for lots of things, from web app development to data analysis.
-- *Gitflow* Correct use of Branches for deployment and features development
-- *Linter checks (rubocop)* Local and Pull Request check for errors, bugs and stylistic errors in code
+- **Ruby** Popular programming language that’s used for lots of things, from web app development to data analysis.
+- **Gitflow** Correct use of Branches for deployment and features development
+- **Linter checks (rubocop)** Local and Pull Request check for errors, bugs and stylistic errors in code
 
 ## Getting started
 
@@ -23,6 +23,20 @@ cd school-library
 ```shell
 ruby --version && irb
 ```
+
+The ouput should start with something like `ruby 3.1.2`
+
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+
+```shell
+rbenv install 3.1.2
+```
+
+### Testing
+
+To test and utilize the code, use the terminal and run ruby by inputting `irb` in the command line, or by using an extension in Visual Studio Code like *Code runner*
+
+The user then can modify and play with the files as needed
 
 <!-- ### Install dependencies
 
