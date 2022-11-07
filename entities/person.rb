@@ -3,7 +3,7 @@ class Person
   attr_accessor :name, :age
   attr_writer :parent_permission
 
-  def initialize(age, name = "Unknown", parent_permission = true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -20,7 +20,7 @@ class Person
 end
 
 # testing
-person = Person.new(24, "David", true)
+person = Person.new(24, 'David', true)
 puts person.can_use_services? # true
 puts person.name
 puts person.age

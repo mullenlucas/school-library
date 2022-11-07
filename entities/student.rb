@@ -14,7 +14,7 @@ class Student < Person
 end
 
 # testing
-student = Student.new(24, "David", true, "Math")
+student = Student.new(24, 'David', true, 'Math')
 puts student.play_hooky
 puts student.name
 puts student.age
