@@ -8,7 +8,7 @@ class Person < Nameable
   attr_accessor :name, :age
   attr_writer :parent_permission
 
-  def initialize(age, name = 'Unknown', parent_permission = true)
+  def initialize(age, name = 'Unknown', parent_permission: true)
     super()
     @id = Random.rand(1..1000)
     @name = name
@@ -38,8 +38,8 @@ puts person.name
 puts person.age
 
 person.correct_name
-capitalizedPerson = CapitalizeDecorator.new(person)
-capitalizedPerson.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+capitalized_person.correct_name
 
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-capitalizedTrimmedPerson.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+capitalized_trimmed_person.correct_name
