@@ -1,9 +1,15 @@
-class Person
+require_relative '../operations/nameable'
+require_relative '../operations/decorator'
+require_relative '../operations/capitalize_dc'
+require_relative '../operations/trim_dc'
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
   attr_writer :parent_permission
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -14,6 +20,10 @@ class Person
     @parent_permission || of_age?
   end
 
+  def correct_name
+    @name
+  end
+
   private
 
   def of_age?
@@ -22,7 +32,14 @@ class Person
 end
 
 # testing
-person = Person.new(24, 'David', true)
+person = Person.new(22, 'maximilianus')
 puts person.can_use_services? # true
 puts person.name
 puts person.age
+
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+capitalized_person.correct_name
+
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+capitalized_trimmed_person.correct_name
