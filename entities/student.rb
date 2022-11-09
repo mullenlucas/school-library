@@ -1,7 +1,7 @@
 require_relative 'person'
 
 class Student < Person
-  attr_accessor :classroom
+  attr_reader :classroom
 
   def initialize(*all, classroom)
     super(*all)
@@ -11,10 +11,9 @@ class Student < Person
   def play_hooky
     '¯\\(ツ)/¯'
   end
-end
 
-# testing
-student = Student.new(24, 'David', true, 'Math')
-puts student.play_hooky
-puts student.name
-puts student.age
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
+  end
+end
