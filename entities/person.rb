@@ -4,7 +4,7 @@ require_relative '../operations/capitalize_dc'
 require_relative '../operations/trim_dc'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :rentals, :book
   attr_accessor :name, :age
   attr_writer :parent_permission
 
@@ -14,6 +14,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def can_use_services?
@@ -22,6 +23,10 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def create_rental(book, date)
+    Rental.new(date, self, book)
   end
 
   private
