@@ -12,9 +12,3 @@ class Teacher < Person
     true
   end
 end
-
-# testing
-teacher = Teacher.new(27, 'Alice', 'Physics')
-puts teacher.can_use_services? # true
-puts teacher.name
-puts teacher.age
