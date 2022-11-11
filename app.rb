@@ -1,7 +1,7 @@
-require_relative '../entities/book'
-require_relative '../entities/teacher'
-require_relative '../entities/student'
-require_relative '../entities/rental'
+require_relative './entities/book'
+require_relative './entities/teacher'
+require_relative './entities/student'
+require_relative './operations/rental'
 
 class App
   def initialize
