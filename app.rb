@@ -17,6 +17,7 @@ class App
   def run
     UserOutput.load_people(@people)
     UserOutput.load_books(@books)
+    UserOutput.load_rentals(@rentals)
     user_input = 0
     puts "####\nWelcome to the School Library Ruby App!\n####"
     while user_input != '7'
@@ -30,5 +31,6 @@ class App
     puts "Exiting, thanks for using this app!\n\n" if user_input == '7'
     UserInput.save_people(@people)
     UserInput.save_books(@books)
+    UserInput.save_rentals(@rentals)
   end
 end
