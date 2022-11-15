@@ -30,11 +30,11 @@ class UserOutput
 
   def self.load_rentals(rentals)
     return rentals unless File.exist?('./data/rentals.json')
+
     object = JSON.parse(File.read('./data/rentals.json'))
     object.each do |rental|
       rentals_json = Rental.new(rental['date'], rental['title'], rental['name'])
       rentals << rentals_json
     end
   end
-
 end
