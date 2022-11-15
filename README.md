@@ -53,6 +53,18 @@ bundle && yarn
 - GitHub: [@mullenlucas](https://github.com/mullenlucas)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-mullen-447312119/)
 
+👤 **Diego Hernández**
+
+- GitHub: [@diehoh40](https://github.com/diegoh40)
+- Twitter: [@Diegoart80](https://twitter.com/Diegoart80)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/diegoarturoh/)
+
+👤 **Daniel**
+
+- GitHub: [@dgonzalesi](https://github.com/dgonzalesi/)
+- Twitter: [@dgonzalesi](https://twitter.com/dgonzalesi/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/daniel-g-sierra-60472719/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
