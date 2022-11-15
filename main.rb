@@ -18,9 +18,13 @@ def check_selection(response)
   when '2'
     list_all_people
   when '3'
-    create_person
+    person = Person.create_person
+    @people << person
+    puts "#{person.name} created successfully" if @people.include?(person)
   when '4'
-    create_book
+    book = Book.create_book
+    @books << book
+    puts "Book '#{book.title}' by #{book.author} created successfully" if @books.include?(book)
   when '5'
     create_rental
   when '6'
