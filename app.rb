@@ -37,32 +37,6 @@ class App
     end
   end
 
-  def create_rental
-    if @books.empty?
-      puts 'Please create a book first (option 4).'
-    elsif @people.empty?
-      puts 'Please add a person first (option 3).'
-    else
-      puts 'Select a book from this list by number'
-      @books.each do |book|
-        puts "#{@books.find_index(book)} - #{book.title}"
-      end
-      selected_book = gets.to_i
-      print 'Date: '
-      date = gets.chomp
-      puts 'Select a person from this list by number'
-      @people.each do |person|
-        puts "#{@people.find_index(person)} - #{person.name}"
-      end
-      selected_person = gets.to_i
-
-      rental = Rental.new(date, @books[selected_book], @people[selected_person])
-
-      @rentals << rental
-      puts 'Rental created successfully' if @rentals.include?(rental)
-    end
-  end
-
   def list_all_rentals_person_id
     list_all_people
     print 'Person ID: '

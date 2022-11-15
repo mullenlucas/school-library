@@ -26,7 +26,9 @@ def check_selection(response)
     @books << book
     puts "Book '#{book.title}' by #{book.author} created successfully" if @books.include?(book)
   when '5'
-    create_rental
+    rental = Rental.create_rental(@books, @people)
+    @rentals << rental
+    puts 'Rental created successfully' if @rentals.include?(rental)
   when '6'
     list_all_rentals_person_id
   end
