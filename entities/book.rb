@@ -12,7 +12,7 @@ class Book
     title = gets.chomp
     print 'Author: '
     author = gets.chomp
-    book = Book.new(title, author)
+    Book.new(title, author)
   end
 
   def self.list_all_books(books)

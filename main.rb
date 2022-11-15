@@ -11,6 +11,7 @@ def app_options
   puts "\n"
 end
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def check_selection(response)
   case response
   when '1'
@@ -30,9 +31,10 @@ def check_selection(response)
     @rentals << rental
     puts 'Rental created successfully' if @rentals.include?(rental)
   when '6'
-    Rental.list_all_rentals_person_id(@people, @rentals)   
+    Rental.list_all_rentals_person_id(@people, @rentals)
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 def main
   app = App.new

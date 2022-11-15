@@ -24,6 +24,4 @@ class App
     end
     puts "Exiting, thanks for using this app!\n\n" if user_input == '7'
   end
-
- 
 end
