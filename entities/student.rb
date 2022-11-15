@@ -8,6 +8,15 @@ class Student < Person
     @classroom = classroom
   end
 
+  def self.create_student(age, name)
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp
+    parent_permission = parent_permission.downcase == 'y'
+    print 'Please enter a classroom: '
+    classroom = gets.chomp
+    new(age, name, parent_permission, classroom)
+  end
+
   def play_hooky
     '¯\\(ツ)/¯'
   end

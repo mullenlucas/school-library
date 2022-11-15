@@ -42,19 +42,21 @@ class Person < Nameable
 
       case person_selected
       when '1'
-        print 'Has parent permission? [Y/N]: '
-        parent_permission = gets.chomp
-        parent_permission = parent_permission.downcase == 'y'
-        print 'Please enter a classroom: '
-        classroom = gets.chomp
-        person = Student.new(age, name, parent_permission, classroom)
+        Student.create_student(age, name)
       when '2'
-        print 'Specialization: '
-        specialization = gets.chomp
-        person = Teacher.new(age, name, true, specialization)
+        Teacher.create_teacher(age, name)
       end
     end
+  end
 
+  def self.list_all_people(people)
+    if people.empty?
+      'No people found, choose a different option to register a new person'
+    else
+      people.each do |person|
+        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
   end
 
   private

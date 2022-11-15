@@ -15,6 +15,12 @@ class Book
     book = Book.new(title, author)
   end
 
+  def self.list_all_books(books)
+    books.each do |book|
+      puts "Title: '#{book.title}' Author: #{book.author}"
+    end
+  end
+
   def create_rental(person, date)
     Rental.new(date, self, person)
   end

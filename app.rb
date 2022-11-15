@@ -25,18 +25,6 @@ class App
     puts "Exiting, thanks for using this app!\n\n" if user_input == '7'
   end
 
-  def list_all_books
-    @books.each do |book|
-      puts "Title: '#{book.title}' Author: #{book.author}"
-    end
-  end
-
-  def list_all_people
-    @people.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-  end
-
   def list_all_rentals_person_id
     list_all_people
     print 'Person ID: '

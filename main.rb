@@ -14,9 +14,9 @@ end
 def check_selection(response)
   case response
   when '1'
-    list_all_books
+    Book.list_all_books(@books)
   when '2'
-    list_all_people
+    Person.list_all_people(@people)
   when '3'
     person = Person.create_person
     @people << person
