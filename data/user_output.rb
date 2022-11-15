@@ -18,4 +18,14 @@ class UserOutput
     end
   end
 
+  def self.load_books(books)
+    return books unless File.exist?('./data/books.json')
+
+    object = JSON.parse(File.read('./data/books.json'))
+    object.each do |book|
+      book = Book.new(book['title'], book['author'])
+      books << book
+    end
+  end
+
 end
