@@ -3,6 +3,9 @@ require_relative './entities/teacher'
 require_relative './entities/student'
 require_relative './operations/rental'
 require_relative './entities/person'
+require 'json'
+require_relative './data/user_input'
+require_relative './data/user_output'
 
 class App
   def initialize()
@@ -12,6 +15,7 @@ class App
   end
 
   def run
+    UserOutput.load_people(@people)
     user_input = 0
     puts "####\nWelcome to the School Library Ruby App!\n####"
     while user_input != '7'
@@ -23,5 +27,6 @@ class App
       check_selection(user_input)
     end
     puts "Exiting, thanks for using this app!\n\n" if user_input == '7'
+    UserInput.save_people(@people)
   end
 end

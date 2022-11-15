@@ -1,0 +1,26 @@
+[
+	{
+		"id": "639",
+		"class": "Teacher",
+		"name": "gdaj",
+		"age": "52",
+		"specialization": "gda",
+		"parent_permission": ""
+	},
+	{
+		"id": "910",
+		"class": "Student",
+		"name": "fdaj",
+		"age": "5",
+		"classroom": "fda",
+		"parent_permission": "true"
+	},
+	{
+		"id": "83",
+		"class": "Teacher",
+		"name": "gfa",
+		"age": "56",
+		"specialization": "gfa",
+		"parent_permission": "true"
+	}
+]
