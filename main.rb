@@ -11,22 +11,30 @@ def app_options
   puts "\n"
 end
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def check_selection(response)
   case response
   when '1'
-    list_all_books
+    Book.list_all_books(@books)
   when '2'
-    list_all_people
+    Person.list_all_people(@people)
   when '3'
-    create_person
+    person = Person.create_person
+    @people << person
+    puts "#{person.name} created successfully" if @people.include?(person)
   when '4'
-    create_book
+    book = Book.create_book
+    @books << book
+    puts "Book '#{book.title}' by #{book.author} created successfully" if @books.include?(book)
   when '5'
-    create_rental
+    rental = Rental.create_rental(@books, @people)
+    @rentals << rental
+    puts 'Rental created successfully' if @rentals.include?(rental)
   when '6'
-    list_all_rentals_person_id
+    Rental.list_all_rentals_person_id(@people, @rentals)
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 def main
   app = App.new
