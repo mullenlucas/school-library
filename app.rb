@@ -25,16 +25,5 @@ class App
     puts "Exiting, thanks for using this app!\n\n" if user_input == '7'
   end
 
-  def list_all_rentals_person_id
-    list_all_people
-    print 'Person ID: '
-    person_id = gets.to_i
-    puts(@rentals.map do |rental|
-      if rental.person.id == person_id
-        "Rentals:\nDate: #{rental.date}  Book: #{rental.book.title}"
-      else
-        'No rentals found for this person'
-      end
-    end)
-  end
+ 
 end

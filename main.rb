@@ -30,7 +30,7 @@ def check_selection(response)
     @rentals << rental
     puts 'Rental created successfully' if @rentals.include?(rental)
   when '6'
-    list_all_rentals_person_id
+    Rental.list_all_rentals_person_id(@people, @rentals)   
   end
 end
 

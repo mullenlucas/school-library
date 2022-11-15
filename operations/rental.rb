@@ -1,3 +1,5 @@
+require_relative '../entities/person'
+
 class Rental
   attr_accessor :date, :person, :book
 
@@ -30,5 +32,18 @@ class Rental
 
       Rental.new(date, books[selected_book], people[selected_person])
     end
+  end
+
+  def self.list_all_rentals_person_id(people, rentals)
+    Person.list_all_people(people)
+    print 'Person ID: '
+    person_id = gets.to_i
+    puts(rentals.map do |rental|
+      if rental.person.id == person_id
+        "Rentals:\nDate: #{rental.date}  Book: #{rental.book.title}"
+      else
+        'No rentals found for this person'
+      end
+    end)
   end
 end
