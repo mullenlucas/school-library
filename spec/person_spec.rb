@@ -1,6 +1,5 @@
 require_relative '../entities/person'
 
-
 describe '#age' do
   it 'will return the correct age' do
     person = Person.new(30, 'Diego', parent_permission: true)
