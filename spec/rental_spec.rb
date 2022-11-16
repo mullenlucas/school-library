@@ -1,4 +1,4 @@
-require_relative 'rental'
+require_relative '../operations/rental'
 require_relative '../entities/book'
 require_relative '../entities/teacher'
 
