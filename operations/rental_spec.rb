@@ -1,12 +1,12 @@
 require_relative 'rental'
-require_relative '../entities/book.rb'
-require_relative '../entities/teacher.rb'
+require_relative '../entities/book'
+require_relative '../entities/teacher'
 
 describe Rental do
-  context "When a new book is created it relate the book to a given user"
-  it "should create a rental acording to the information given" do
+  context 'When a new book is created it relate the book to a given user'
+  it 'should create a rental acording to the information given' do
     book = Book.new('Amor En Los tiempos de Colera', 'Juan')
-    teacher = Teacher.new(29 ,'Pancho', true, 'spanish')
+    teacher = Teacher.new(29, 'Pancho', true, 'spanish')
     rental = Rental.new('01/01/01', book, teacher)
     expect(rental.date).to eq '01/01/01'
     expect(rental.person.name).to eq 'Pancho'
